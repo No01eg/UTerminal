@@ -8,10 +8,11 @@ public partial class MainWindow : Window
   public MainWindow()
   {
     InitializeComponent();
+    Title += " v1.0.0";
   }
 
   private void btnSend_Click(object sender, RoutedEventArgs e)
   {
-    tbText.Text += "You Click Button\r\n";
+    tbText.Text += $"{InputCmd.Text}\r\n";
   }
 }
