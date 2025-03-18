@@ -1,0 +1,36 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="UTerminal.MainWindow"
+				FontSize="13"
+        Title="UTerminal">
+	<Grid >
+		<DockPanel>
+				<Grid DockPanel.Dock="Top">
+					<Grid.ColumnDefinitions>
+						<ColumnDefinition Width="*"></ColumnDefinition>
+						<ColumnDefinition Width="Auto"></ColumnDefinition>
+					</Grid.ColumnDefinitions>
+					<Grid.RowDefinitions>
+						<RowDefinition Height="Auto"/>
+						<RowDefinition Height="Auto"/>
+					</Grid.RowDefinitions>
+					<Menu Grid.ColumnSpan="1" Height="20" VerticalAlignment="Top">
+						<MenuItem Header="_File"/>
+						<MenuItem Header="_View"/>
+						<MenuItem Header="_Connection"/>
+						<MenuItem Header="_Configure"/>
+						<MenuItem Header="_Tools"/>
+						<MenuItem Header="_About"/>
+					</Menu>
+					<TextBox x:Name="InputCmd" Grid.Column="0" Grid.Row="1" Margin="1 2 1 2"></TextBox>
+					<Button Content="Send" Grid.Column="1" Grid.Row="1" Margin="2 1 1 2" x:Name="btnSend" Click="btnSend_Click"></Button>
+				</Grid>
+			<ScrollViewer>
+				<TextBlock x:Name="tbText"></TextBlock>
+			</ScrollViewer>
+		</DockPanel>
+	</Grid>
+</Window>
