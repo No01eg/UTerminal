@@ -1,9 +1,11 @@
 using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
+using Avalonia.X11;
 
 using System.Runtime.InteropServices;
 using System;
+
 
 namespace UTerminal;
 
@@ -14,6 +16,7 @@ public partial class MainWindow : Window
     InitializeComponent();
     Title += " v1.0.0";
     //bool res = Console.CapsLock;
+    Activated += Main_Actived;
   }
 
   public static class KeyboardHelper
@@ -37,39 +40,7 @@ public partial class MainWindow : Window
     public static bool IsCapsLockOn()
     {
       bool res = false;
-        IntPtr display = XOpenDisplay(null);
-        if (display == IntPtr.Zero)
-        {
-          throw new Exception("Не удалось открыть дисплей X.");
-        }
-        try
-        {
-            // Проверяем, поддерживается ли XKB
-            /*int opcode, eventCode, errorCode;
-            if (XkbQueryExtension(display, out opcode, out eventCode, out errorCode) == 0)
-            {
-              res = true;
-                throw new Exception("XKB не поддерживается.");
-            }*/
-
-            // Получаем состояние индикаторов
-            uint state;
-            int result = XkbGetIndicatorState(display, XkbUseCoreKbd, out state);
-            if (result != 0)
-            {
-              res = true;
-                throw new Exception("Не удалось получить состояние индикаторов.");
-            }
-            XCloseDisplay(display);
-            return res;
-
-            // Проверяем состояние Caps Lock
-            return (state & (1 << 0)) != 0; // 0 - это LED для Caps Lock
-        }
-        finally
-        {
-            XCloseDisplay(display);
-        }
+       return false;
     }
   }
 #else
@@ -88,6 +59,11 @@ public partial class MainWindow : Window
       tbText.Text += "CapsLock OFF\r\n";
     int a = 10;
     a++;
+  }
+
+  private void Main_Actived(object sender, EventArgs e)
+  {
+    tbText.Text += "Окно получило фокус\r\n";
   }
 
   private void btnSend_Click(object sender, RoutedEventArgs e)
