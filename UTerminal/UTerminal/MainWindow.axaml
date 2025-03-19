@@ -29,7 +29,7 @@
 					<Button Content="Send" Grid.Column="1" Grid.Row="1" Margin="2 4 4 4" x:Name="btnSend" Click="btnSend_Click"></Button>
 				</Grid>
 			<ScrollViewer>
-				<TextBlock x:Name="tbText"></TextBlock>
+				<TextBlock x:Name="tbText" Margin="4"></TextBlock>
 			</ScrollViewer>
 		</DockPanel>
 	</Grid>
