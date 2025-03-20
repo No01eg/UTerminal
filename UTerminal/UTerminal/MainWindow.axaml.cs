@@ -5,6 +5,7 @@ using Avalonia.X11;
 
 using System.Runtime.InteropServices;
 using System;
+using Avalonia.Media;
 
 
 namespace UTerminal;
@@ -52,18 +53,27 @@ public partial class MainWindow : Window
 #endif
   private void MainKey_Press(object sender, KeyEventArgs e)
   {
-    bool res = KeyboardHelper.IsCapsLockOn();
-    if (res)
-      tbText.Text += "CapsLock On\r\n";
+    if (e.Key == Key.CapsLock)
+      MainColoredCaps();
+  }
+
+  private void MainColoredCaps()
+  {
+    if (KeyboardHelper.IsCapsLockOn())
+    {
+      bCaps.BorderBrush = Brushes.Red;
+      tbCaps.Foreground = Brushes.Red;
+    }
     else
-      tbText.Text += "CapsLock OFF\r\n";
-    int a = 10;
-    a++;
+    {
+      bCaps.BorderBrush = Brushes.Gray;
+      tbCaps.Foreground = Brushes.Gray;
+    }
   }
 
   private void Main_Actived(object sender, EventArgs e)
   {
-    tbText.Text += "Окно получило фокус\r\n";
+    MainColoredCaps();
   }
 
   private void btnSend_Click(object sender, RoutedEventArgs e)

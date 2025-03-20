@@ -30,11 +30,11 @@
 					<Button Content="Send" Grid.Column="1" Grid.Row="1" Margin="2 4 4 4" x:Name="btnSend" Click="btnSend_Click"></Button>
 				</Grid>
 			<Grid DockPanel.Dock="Bottom">
-				<Border BorderBrush="Gainsboro" BorderThickness="2" Padding="0 1 0 0" >
+				<Border BorderBrush="Gray" BorderThickness="2" Padding="0 1 0 0" >
 					<StackPanel Orientation="Horizontal">
 						<TextBlock>Test</TextBlock>
-						<Border BorderBrush="Gainsboro" BorderThickness="2" Padding="0 0 0 0">
-							<TextBlock Foreground="Gray" Margin="2 0 2 0">CAPS</TextBlock>
+						<Border x:Name="bCaps" BorderBrush="Gray" BorderThickness="2" Padding="0 0 0 0">
+							<TextBlock x:Name="tbCaps" Foreground="Gray" Margin="2 0 2 0">CAPS</TextBlock>
 						</Border>
 				</StackPanel>
 				</Border>
