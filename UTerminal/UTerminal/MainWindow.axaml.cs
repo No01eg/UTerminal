@@ -57,6 +57,14 @@ public partial class MainWindow : Window
       MainColoredCaps();
   }
 
+  private void Connect_click(object sender, RoutedEventArgs e)
+  {
+    Connection con = new Connection();
+    
+    con.ShowDialog(this);
+    
+  }
+
   private void MainColoredCaps()
   {
     if (KeyboardHelper.IsCapsLockOn())

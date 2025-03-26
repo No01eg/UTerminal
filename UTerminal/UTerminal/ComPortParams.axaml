@@ -1,0 +1,22 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="UTerminal.ComPortParams">
+	<Grid>
+		<Grid.RowDefinitions>
+			<ColumnDefinition/>
+			<ColumnDefinition/>
+		</Grid.RowDefinitions>
+		<Grid.RowDefinitions>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<TabControl Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="1">
+			<TabItem Header="Вкладка 1">Первая вкладка</TabItem>
+			<TabItem Header="Вкладка 2">Вторая вкладка</TabItem>
+		</TabControl>
+	</Grid>
+</UserControl>

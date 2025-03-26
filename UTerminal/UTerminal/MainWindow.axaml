@@ -2,10 +2,11 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="300"
         x:Class="UTerminal.MainWindow"
 				FontSize="13"
         Title="UTerminal"
+				Height="400" Width="300" MinWidth="400" MinHeight="350"
 				KeyDown="MainKey_Press">
 	<Grid >
 		<DockPanel>
@@ -21,7 +22,7 @@
 					<Menu Grid.ColumnSpan="1" Height="20" VerticalAlignment="Top">
 						<MenuItem Header="_File"/>
 						<MenuItem Header="_View"/>
-						<MenuItem Header="_Connection"/>
+						<MenuItem Header="_Connection" Click="Connect_click"/>
 						<MenuItem Header="_Configure"/>
 						<MenuItem Header="_Tools"/>
 						<MenuItem Header="_About"/>
